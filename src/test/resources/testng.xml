@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="All tests" group-by-instances="true" parallel="methods" thread-count="10">
-    <test name="test">
+<suite name="All tests - full regression" group-by-instances="true" parallel="methods" thread-count="10">
+    <test name="Test">
         <groups>
             <run>
                 <exclude name="bug" />
