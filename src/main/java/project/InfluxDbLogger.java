@@ -77,7 +77,8 @@ public class InfluxDbLogger implements ITestListener {
 		.time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
 		.tag("Class name", arg0.getTestClass().getName())
 		.tag("Method name", arg0.getName())
-		.addField("Duration", arg0.getEndMillis() - arg0.getStartMillis())
+		.addField("Start", arg0.getStartMillis())
+		.addField("Duration", 0)
 		.build());
     }
 
