@@ -1,8 +1,10 @@
-package project;
+package project.categoryC;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import project.AbstractTest;
 
 public class TestParameterOneTest extends AbstractTest {
 

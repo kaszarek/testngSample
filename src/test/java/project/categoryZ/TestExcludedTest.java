@@ -1,16 +1,18 @@
-package project;
+package project.categoryZ;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class TestBugTest extends AbstractTest {
+import project.AbstractTest;
+
+public class TestExcludedTest extends AbstractTest {
 
     @BeforeClass(alwaysRun = true)
     private void setup() {
 	takeRandomTime();
     }
 
-    @Test(groups = "bug")
+    @Test(groups = "anotherexcluded")
     public void testBugyBehavior() {
 	takeRandomTime(500, 1500);
 	decideOnResult();

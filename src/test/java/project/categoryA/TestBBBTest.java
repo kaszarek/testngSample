@@ -1,7 +1,9 @@
-package project;
+package project.categoryA;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import project.AbstractTest;
 
 public class TestBBBTest extends AbstractTest {
 

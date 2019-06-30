@@ -1,9 +1,11 @@
-package project;
+package project.categoryB;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class TestAlphaTest extends AbstractTest {
+import project.AbstractTest;
+
+public class TestGammaTest extends AbstractTest {
 
     @BeforeClass(alwaysRun = true)
     private void setup() {

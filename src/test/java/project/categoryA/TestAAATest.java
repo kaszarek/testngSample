@@ -1,9 +1,11 @@
-package project;
+package project.categoryA;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class TestCCCTest extends AbstractTest {
+import project.AbstractTest;
+
+public class TestAAATest extends AbstractTest {
 
     @BeforeClass(alwaysRun = true)
     private void setup() {
@@ -12,91 +14,91 @@ public class TestCCCTest extends AbstractTest {
 
     @Test
     public void testOne() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void testTwo() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void testThree() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void test4() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void test5() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void test6() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void test7() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void test8() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void test9() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void test10() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void test11() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void test12() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void test14() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void test15() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
     @Test
     public void test16() {
-	takeRandomTime();
+	takeRandomTime(5000, 30000);
 	decideOnResult();
     }
 
