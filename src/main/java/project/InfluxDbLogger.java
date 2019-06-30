@@ -15,20 +15,27 @@ public class InfluxDbLogger implements ITestListener {
 
     @Override
     public void onFinish(ITestContext arg0) {
-	// TODO Auto-generated method stub
-
     }
 
     @Override
     public void onStart(ITestContext arg0) {
-	// TODO Auto-generated method stub
-
+	recordPointOfData(Point.measurement("Test results")
+		.time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
+		.tag("Suite name", arg0.getSuite().getName())
+		.addField("Start", arg0.getStartDate().getTime())
+		.addField("Duration", 0)
+		.build());
+	recordPointOfData(Point.measurement("TestSuites")
+		.time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
+		.tag("Suite name", arg0.getSuite().getName())
+		.addField("Name", arg0.getSuite().getName())
+		.addField("Start", arg0.getStartDate().getTime())
+		.addField("Duration", 0)
+		.build());
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
-	// TODO Auto-generated method stub
-
     }
 
     @Override
