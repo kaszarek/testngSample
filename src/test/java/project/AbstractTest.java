@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.Listeners;
 
-@Listeners(InfluxDbLogger.class)
+@Listeners(value = { InfluxDbLogger.class, TestLogger.class })
 public class AbstractTest {
 
     protected void takeRandomTime() {
