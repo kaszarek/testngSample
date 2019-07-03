@@ -2,12 +2,28 @@ package project;
 
 import java.util.Random;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.annotation.DirtiesContext.ClassMode;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.Listeners;
 
+import project.beans.SomeBeanFromFactory;
+import project.external.SomeBean;
+
 @Listeners(value = { InfluxDbLogger.class, TestLogger.class })
-public class AbstractTest {
+@ContextConfiguration(classes = SampleContextConfig.class)
+@DirtiesContext(classMode = ClassMode.BEFORE_CLASS)
+public class AbstractTest extends AbstractTestNGSpringContextTests {
+
+    @Autowired
+    SomeBean someBean;
+
+    @Autowired
+    SomeBeanFromFactory someBeanFromFactory;
 
     protected void takeRandomTime() {
 	final int randomTimeToSleep = getRandomValue(3000) + 100;

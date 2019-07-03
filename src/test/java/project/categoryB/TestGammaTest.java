@@ -1,11 +1,16 @@
 package project.categoryB;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import project.AbstractTest;
+import project.beans.GammaBean;
 
 public class TestGammaTest extends AbstractTest {
+
+    @Autowired
+    GammaBean gammaBean;
 
     @BeforeClass(alwaysRun = true)
     private void setup() {
