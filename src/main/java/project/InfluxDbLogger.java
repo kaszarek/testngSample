@@ -23,14 +23,12 @@ public class InfluxDbLogger implements ITestListener {
 		.time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
 		.tag("Suite name", arg0.getSuite().getName())
 		.addField("Start", arg0.getStartDate().getTime())
-		.addField("Duration", 0)
 		.build());
 	recordPointOfData(Point.measurement("TestSuites")
 		.time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
 		.tag("Suite name", arg0.getSuite().getName())
 		.addField("Name", arg0.getSuite().getName())
 		.addField("Start", arg0.getStartDate().getTime())
-		.addField("Duration", 0)
 		.build());
     }
 
@@ -44,17 +42,17 @@ public class InfluxDbLogger implements ITestListener {
 		.time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
 		.tag("Class name", arg0.getTestClass().getName())
 		.tag("Method name", arg0.getName())
+		.tag("Result", "Failure")
 		.addField("Start", arg0.getStartMillis())
 		.addField("End", arg0.getEndMillis())
 		.addField("Duration", arg0.getEndMillis() - arg0.getStartMillis())
-		.tag("Result", "Failure")
 		.build());
 	recordPointOfData(Point.measurement("TestMethods")
 		.time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
 		.tag("Class name", arg0.getTestClass().getName())
 		.tag("Method name", arg0.getName())
-		.addField("Duration", arg0.getEndMillis() - arg0.getStartMillis())
 		.tag("Result", "Failure")
+		.addField("Duration", arg0.getEndMillis() - arg0.getStartMillis())
 		.build());
     }
 
@@ -64,17 +62,17 @@ public class InfluxDbLogger implements ITestListener {
 		.time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
 		.tag("Class name", arg0.getTestClass().getName())
 		.tag("Method name", arg0.getName())
+		.tag("Result", "Skipped")
 		.addField("Start", arg0.getStartMillis())
 		.addField("End", arg0.getEndMillis())
 		.addField("Duration", arg0.getEndMillis() - arg0.getStartMillis())
-		.tag("Result", "Skipped")
 		.build());
 	recordPointOfData(Point.measurement("TestMethods")
 		.time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
 		.tag("Class name", arg0.getTestClass().getName())
 		.tag("Method name", arg0.getName())
-		.addField("Duration", arg0.getEndMillis() - arg0.getStartMillis())
 		.tag("Result", "Skipped")
+		.addField("Duration", arg0.getEndMillis() - arg0.getStartMillis())
 		.build());
     }
 
@@ -85,7 +83,6 @@ public class InfluxDbLogger implements ITestListener {
 		.tag("Class name", arg0.getTestClass().getName())
 		.tag("Method name", arg0.getName())
 		.addField("Start", arg0.getStartMillis())
-		.addField("Duration", 0)
 		.build());
     }
 
@@ -95,15 +92,15 @@ public class InfluxDbLogger implements ITestListener {
 		.time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
 		.tag("Class name", arg0.getTestClass().getName())
 		.tag("Method name", arg0.getName())
-		.addField("Duration", arg0.getEndMillis() - arg0.getStartMillis())
 		.tag("Result", "Success")
+		.addField("Duration", arg0.getEndMillis() - arg0.getStartMillis())
 		.build());
 	recordPointOfData(Point.measurement("TestMethods")
 		.time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
 		.tag("Class name", arg0.getTestClass().getName())
 		.tag("Method name", arg0.getName())
-		.addField("Duration", arg0.getEndMillis() - arg0.getStartMillis())
 		.tag("Result", "Success")
+		.addField("Duration", arg0.getEndMillis() - arg0.getStartMillis())
 		.build());
     }
 
